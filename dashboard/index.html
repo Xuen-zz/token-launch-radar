@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Token Launch Radar · Research desk</title>
+  <link rel="stylesheet" href="app.css">
+  <script defer src="../data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <aside class="rail" aria-label="Research desk">
+    <div class="brand"><i class="radar-mark" aria-hidden="true"></i><strong>RADAR<span>RESEARCH DESK</span></strong></div>
+    <div class="rail-label">WORKSPACE / 01</div>
+    <a href="#board" class="active">↗ &nbsp; Launch radar</a>
+    <a id="model-link" href="#method">◫ &nbsp; Model notes</a>
+    <div class="rail-bottom"><span class="status-dot"></span> OFFLINE SNAPSHOT<br><small>Evidence before conviction.</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>RESEARCH / TOKEN DISCOVERY</span><span id="source">Loading snapshot</span></header>
+    <p id="missing" class="notice" hidden>Snapshot data is missing. Run the entrypoint and open the generated dashboard.</p>
+    <div id="radar" hidden>
+      <section class="hero">
+        <div><p class="eyebrow">THE PRE-LAUNCH LANDSCAPE</p><h1>Token Launch Radar<span>.</span></h1>
+          <p class="intro">A ranked research universe. Follow the value, inspect the evidence, price the next step.</p></div>
+        <div class="snapshot-stamp"><span class="status-dot"></span> SEALED DATA<br><strong id="asof"></strong><small>No live network required</small></div>
+      </section>
+      <p class="scope">Values estimate circulating market cap <strong>conditional on the observed protocol scale</strong>. A missing token record establishes neither a future launch nor reward eligibility.</p>
+      <dl id="summary" class="summary"></dl>
+      <section class="model-strip" id="method">
+        <div class="model-label"><span class="eyebrow">MODEL CHECK</span><strong>Calibrated, with uncertainty</strong></div>
+        <div id="model-brief" class="model-numbers"></div>
+        <details id="model"><summary>Inspect validation <span>↗</span></summary><div id="validation"></div></details>
+      </section>
+      <section id="board" class="board-panel">
+        <div class="section-heading"><div><p class="eyebrow">OPPORTUNITY UNIVERSE</p><h2>Protocols to investigate</h2></div><span class="legend"><i></i> Token absent from snapshot record</span></div>
+        <form id="filters" class="filters">
+          <label class="search-label">Search<input id="search" type="search" placeholder="Protocol, slug or chain…" autocomplete="off"></label>
+          <label>Category<select id="category"><option value="">All categories</option></select></label>
+          <label>Chain<select id="chain"><option value="">All chains</option></select></label>
+          <label>Coverage<select id="coverage"><option value="leads" selected>Launch research</option><option value="all">Complete universe</option><option value="related">Existing asset review</option><option value="documented">Documented route</option></select></label>
+          <label class="check"><input id="watch" type="checkbox"> Official 40</label>
+          <button type="reset" class="quiet">Reset</button>
+        </form>
+        <div class="table-scroll"><table class="universe">
+          <thead><tr>
+            <th scope="col" aria-sort="ascending"><button data-sort="rank">RANK ↕</button></th>
+            <th scope="col"><button data-sort="name">PROTOCOL ↕</button></th>
+            <th scope="col"><button data-sort="tvl_usd">TVL ↕</button></th>
+            <th scope="col"><button data-sort="implied_value_usd">IMPLIED CAP ↕</button></th>
+            <th scope="col">HOLDOUT RANGE</th>
+            <th scope="col"><button data-sort="cost">ACTION COST ↕</button></th>
+            <th scope="col" aria-label="Open detail"></th>
+          </tr></thead><tbody id="rows"></tbody>
+        </table></div>
+        <div class="pager"><span id="count" aria-live="polite"></span><span><button id="prev" aria-label="Previous page">←</button><button id="next" aria-label="Next page">→</button></span></div>
+      </section>
+      <footer><span>RESEARCH, NOT A LAUNCH FORECAST</span><span>USD · Snapshot observations · Inspect assumptions before acting</span></footer>
+    </div>
+  </main>
+  <dialog id="protocol" aria-labelledby="protocol-title"><button id="close" class="close" aria-label="Close protocol details">×</button><div id="detail"></div></dialog>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/preview/
+/out/
+/artifacts/
+/review/*.tar.gz
+/review/*.bundle
+/review/*.zip
+/review/*-report.json
+/review/*.stderr.txt
+/review/output-check.json
+/review/browser-check.json
+/review/check-*.json
+/review/check-*.txt
+/review/browser-profile/
+*.log
+wallet*.json
+.env*
